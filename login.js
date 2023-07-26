@@ -37,5 +37,18 @@ function criaLista(){
         tabela += "<tr><td>" + dadosLista[i] + "</td><td><button class='btn btn-success' onclick=''>Editar</button><button class='btn btn-danger' onclick=''>Excluir</button></td></tr>";
         
         document.getElementById("tabela").innerHTML = tabela;
-    }
+    } 
+}
+
+function editar(i){
+
+    document.getElementById("nomeUser").value = dadosLista[(i - 1)];
+
+    dadosLista.splice(dadosLista[(i - 1)], 1);
+
+}
+
+function excluir(i){
+    dadosLista.splice((i - i), 1);
+    document.getElementById('tabela').deleteRow(i);
 }
